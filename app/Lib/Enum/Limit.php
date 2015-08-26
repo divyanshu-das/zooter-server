@@ -1,0 +1,86 @@
+<?php 
+App::uses('Enum','Lib');
+  class Limit extends Enum {
+    const NUM_OF_STATUS_WALLS = 10;
+    const TOTAL_NUM_OF_WALLS = 20;
+    const NUM_OF_MATCH_SCHEDULER_RECORDS = 4;
+    const NUM_OF_RECORDS_IN_SEARCH_BOX = 5;
+    const NUM_OF_RECORDS_IN_SEARCH_FRIENDS = 10;
+    const NUM_OF_RECORDS_IN_SEARCH_USERS = 10;
+    const NUM_OF_USERS_TO_RECOMMEND_FOR_MATCH = 7;
+    const NUM_OF_RECOMMENDED_MATCHES = 5;
+    const NUM_OF_FOLLOWED_MATCHES = 5;
+    const NUM_OF_USER_GROUPS = 20;
+    const NUM_OF_USER_FANCLUBS = 20;
+    const NUM_OF_USER_FRIENDS = 20;
+    const NUM_OF_USER_SOCIAL_RECORDS_IN_DASHBOARD = 8;
+    const NUM_OF_USER_OWNED_TEAMS = 4;
+    const NUM_OF_USER_NEARBY_MATCHES = 5;
+    const USER_NEAR_BY_LOCATION_DISTANCE = 560;
+    const NUM_OF_USER_NOTIFICATIONS = 10;
+    const NUM_OF_USER_REQUESTS = 10;
+    const NUM_OF_USER_PROFILE_ABOUT_RECORDS = 4;
+    const NUM_OF_USER_ALBUMS_IN_PROFILE = 4;
+    const NUM_OF_USER_VIDEOS_IN_PROFILE = 4;
+    const NUM_OF_USER_PROFILE_SOCIAL_RECORDS = 20;
+    const NUM_OF_USER_PROFILE_CAREER_RECORDS = 4;
+    const NUM_OF_USER_TEAMS_HISTORY_RECORDS = 4;
+    const NUM_OF_USER_TIMELINE_PHOTOES = 4;
+    const NUM_OF_USER_MY_PLAYED_MATCHES = 4;
+    const NUM_OF_USER_MY_BEST_MATCHES = 4;
+    const NUM_OF_TRENDING_IN_MATCH_CORNER_LANDING = 4;
+    const RUNS_SCORED_EQUIVALENT_PER_WICKET_TAKEN = 30;
+    const MATCH_SEARCH_DISTANCE = 560;
+    const NUM_OF_MATCHES_IN_MATCH_SEARCH_PAGE = 40;
+    const NUM_OF_TEAMS_IN_TEAM_SEARCH_PAGE = 40;
+    const TEAM_SEARCH_DISTANCE = 560;
+    const NUM_OF_PLAYERS_IN_PLAYER_SEARCH = 50;
+    const NUM_OF_TOURNAMENTS_IN_TOURNAMENT_SEARCH_PAGE = 50;
+    const TOURNAMENT_SEARCH_DISTANCE = 560;
+    const NUM_OF_TEAMS_SEARCH_IN_MATCH_INVITATION = 30;
+    const NUM_OF_PLAYERS_SEARCH_IN_ZOOTER_BUCKET = 30;
+    const NUM_OF_ADMINS_SEARCH_IN_MATCH_ADMIN = 30;
+    const NUM_OF_MATCH_FEEDS = 50;
+
+
+    protected static $_options = array(
+      self::NUM_OF_STATUS_WALLS => 'num_of_status_walls',
+      self::TOTAL_NUM_OF_WALLS => 'total_num_of_walls',
+      self::NUM_OF_MATCH_SCHEDULER_RECORDS => 'num_of_match_scheduler_records',
+      self::NUM_OF_RECORDS_IN_SEARCH_BOX => 'num_of_records_in_search_box',
+      self::NUM_OF_RECORDS_IN_SEARCH_FRIENDS => 'num_of_records_in_search_friends',
+      self::NUM_OF_RECORDS_IN_SEARCH_USERS => 'num_of_records_in_search_users',
+      self::NUM_OF_USERS_TO_RECOMMEND_FOR_MATCH => 'num_of_users_to_recommend',
+      self::NUM_OF_RECOMMENDED_MATCHES => 'num_of_recommended_matches',
+      self::NUM_OF_FOLLOWED_MATCHES => 'num_of_followed_matches',
+      self::NUM_OF_USER_GROUPS => 'num_of_user_groups',
+      self::NUM_OF_USER_FANCLUBS => 'num_of_user_fanclubs',
+      self::NUM_OF_USER_FRIENDS => 'num_of_user_friends',
+      self::NUM_OF_USER_OWNED_TEAMS => 'num_of_user_friends',
+      self::NUM_OF_USER_NEARBY_MATCHES => 'num_of_user_nearby_matches',
+      self::NUM_OF_USER_NOTIFICATIONS => 'num_of_user_notifications',
+      self::NUM_OF_USER_REQUESTS => 'num_of_user_requests',
+      self::NUM_OF_USER_PROFILE_ABOUT_RECORDS => 'num_of_user_profile_about_records',
+      self::NUM_OF_USER_ALBUMS_IN_PROFILE => 'num_of_user_albums_in_profile',
+      self::NUM_OF_USER_VIDEOS_IN_PROFILE => 'num_of_user_videos_in_profile',
+      self::NUM_OF_USER_PROFILE_SOCIAL_RECORDS => 'num_of_user_profile_social_records',
+      self::NUM_OF_USER_PROFILE_CAREER_RECORDS => 'num_of_user_profile_career_records',
+      self::NUM_OF_USER_TEAMS_HISTORY_RECORDS => 'num_of_user_teams_history_records',
+      self::NUM_OF_USER_TIMELINE_PHOTOES => 'num_of_user_timeline_photoes',
+      self::NUM_OF_USER_MY_PLAYED_MATCHES => 'num_of_user_my_played_matches',
+      self::NUM_OF_USER_MY_BEST_MATCHES => 'num_of_user_my_best_matches',
+      self::NUM_OF_TRENDING_IN_MATCH_CORNER_LANDING => 'num_of_trending_in_match_corner_landing',
+      self::RUNS_SCORED_EQUIVALENT_PER_WICKET_TAKEN => 'runs_scored_equivalent_per_wicket_taken',
+      self::MATCH_SEARCH_DISTANCE => 'match_search_distance',
+      self::NUM_OF_MATCHES_IN_MATCH_SEARCH_PAGE => 'num_of_matches_in_match_search_page',
+      self::NUM_OF_TEAMS_IN_TEAM_SEARCH_PAGE => 'num_of_teams_in_team_search_page',
+      self::TEAM_SEARCH_DISTANCE => 'team_search_distance',
+      self::NUM_OF_PLAYERS_IN_PLAYER_SEARCH => 'num_of_players_in_player_search',
+      self::NUM_OF_TOURNAMENTS_IN_TOURNAMENT_SEARCH_PAGE => 'num_of_tournaments_in_tournament_search_page',
+      self::TOURNAMENT_SEARCH_DISTANCE => 'tournament_search_distance',
+      self::NUM_OF_TEAMS_SEARCH_IN_MATCH_INVITATION => 'num_of_teams_search_in_match_invitation',
+      self::NUM_OF_PLAYERS_SEARCH_IN_ZOOTER_BUCKET => 'num_of_players_search_in_zooter_bucket',
+      self::NUM_OF_ADMINS_SEARCH_IN_MATCH_ADMIN => 'num_of_admins_search_in_match_admin',
+      self::NUM_OF_MATCH_FEEDS => 'num_of_match_feeds'
+    );
+  }

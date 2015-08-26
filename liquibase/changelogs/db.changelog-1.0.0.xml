@@ -1,0 +1,1002 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="1.0.0.0.1" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in api_keys tables.</comment>
+	  <modifyDataType columnName="is_active"
+	                  newDataType="tinyint(1)"
+	                  tableName="api_keys"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.0.2" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in api_keys tables for deleted.</comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="api_keys"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.0.3" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in albums tables for deleted.</comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="albums"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.0.4" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in album_contributors tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="album_contributors"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.0.5" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in applications table for is_active.</comment>
+	  <modifyDataType columnName="is_active"
+	                  newDataType="tinyint(1)"
+	                  tableName="applications"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.0.6" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in applications table for deleted.</comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="applications"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.0.7" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in award_types table for deleted.</comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="award_types"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.0.8" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in countries table for deleted.</comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="countries"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.0.9" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in dishes tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="dishes"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.1.0" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in fan_clubs tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="fan_clubs"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.1.1" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in fan_club_favorites tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="fan_club_favorites"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.1.2" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in fan_club_favorites tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="type"
+	                  newDataType="tinyint(3)"
+	                  tableName="fan_club_favorites"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.1.3" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in dishes tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="fan_club_members"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.1.4" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in fan_club_members tables for type.
+	  </comment>
+	  <modifyDataType columnName="type"
+	                  newDataType="tinyint(3)"
+	                  tableName="fan_club_members"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.1.5" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in fan_club_members tables for level.
+	  </comment>
+	  <modifyDataType columnName="level"
+	                  newDataType="tinyint(3)"
+	                  tableName="fan_club_members"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.1.6" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in fan_club_members tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="fan_club_members"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.1.7" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in fan_club_favorite_members tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="fan_club_favorite_members"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.1.8" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in fan_club_specials tables for type.
+	  </comment>
+	  <modifyDataType columnName="type"
+	                  newDataType="tinyint(3)"
+	                  tableName="fan_club_specials"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.1.9" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in fan_club_specials tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="fan_club_specials"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.2.0" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(1) in fan_club_specials tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="fan_club_specials"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.2.1" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in grounds tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="grounds"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.2.2" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in groups tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="groups"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.2.3" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in group_messages tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="group_messages"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.2.4" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in group_message_comments tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="group_message_comments"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.2.5" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in group_message_likes tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="group_message_likes"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.2.6" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in hobbies tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="hobbies"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.2.7" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in holiday_destinations tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="holiday_destinations"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.2.8" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in images tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="images"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.2.9" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in image_comments tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="image_comments"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.3.0" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in locations tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="locations"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.3.1" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in matches tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="matches"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.3.2" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(1) in matches tables for is_match_data_complete.
+	  </comment>
+	  <modifyDataType columnName="is_match_data_complete"
+	                  newDataType="tinyint(1)"
+	                  tableName="matches"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.3.3" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in matches tables for is_cricket_ball_used.
+	  </comment>
+	  <modifyDataType columnName="is_cricket_ball_used"
+	                  newDataType="tinyint(1)"
+	                  tableName="matches"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.3.4" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in matches tables for is_test.
+	  </comment>
+	  <modifyDataType columnName="is_test"
+	                  newDataType="tinyint(1)"
+	                  tableName="matches"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.3.5" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(1) in matches tables for match_scale.
+	  </comment>
+	  <modifyDataType columnName="match_scale"
+	                  newDataType="tinyint(3)"
+	                  tableName="matches"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.3.6" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(1) in matches tables for match_type.
+	  </comment>
+	  <modifyDataType columnName="match_type"
+	                  newDataType="tinyint(3)"
+	                  tableName="matches"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.3.7" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in matches tables for is_public.
+	  </comment>
+	  <modifyDataType columnName="is_public"
+	                  newDataType="tinyint(1)"
+	                  tableName="matches"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.3.8" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in match_awards tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="match_awards"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.3.9" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in match_comments tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="match_comments"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.4.0" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in match_followers tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="match_followers"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.4.1" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in match_inning_scorecards tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="match_inning_scorecards"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.4.2" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in match_players tables for role.
+	  </comment>
+	  <modifyDataType columnName="role"
+	                  newDataType="tinyint(3)"
+	                  tableName="match_players"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.4.3" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in match_players tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="match_players"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.4.4" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in match_players tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="match_players"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.4.5" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in match_player_scorecards tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="match_player_scorecards"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.4.6" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(3) in match_privileges tables for is_admin.
+	  </comment>
+	  <modifyDataType columnName="is_admin"
+	                  newDataType="tinyint(1)"
+	                  tableName="match_privileges"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.4.7" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in match_privileges tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="match_privileges"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.4.8" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in match_privileges tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="match_privileges"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.4.9" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in match_recommendations tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="match_recommendations"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.5.0" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in match_results tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="match_results"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.5.1" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in match_staffs tables for role.
+	  </comment>
+	  <modifyDataType columnName="role"
+	                  newDataType="tinyint(3)"
+	                  tableName="match_staffs"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.5.2" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in match_staffs tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="match_staffs"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.5.3" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in match_staffs tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="match_staffs"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.5.4" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in match_teams tables for is_host.
+	  </comment>
+	  <modifyDataType columnName="is_host"
+	                  newDataType="tinyint(3)"
+	                  tableName="match_teams"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.5.5" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in match_teams tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="match_teams"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.5.6" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in match_teams tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="match_teams"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.5.7" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(2) in match_tosses tables for toss_decision.
+	  </comment>
+	  <modifyDataType columnName="toss_decision"
+	                  newDataType="tinyint(2)"
+	                  tableName="match_tosses"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.5.8" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in match_tosses tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="match_tosses"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.5.9" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in movies tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="movies"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.6.0" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in music tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="music"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.6.1" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in notifications tables for type.
+	  </comment>
+	  <modifyDataType columnName="type"
+	                  newDataType="tinyint(3)"
+	                  tableName="notifications"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.6.2" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(3) in notifications tables for is_read.
+	  </comment>
+	  <modifyDataType columnName="is_read"
+	                  newDataType="tinyint(1)"
+	                  tableName="notifications"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.6.3" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in notifications tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="notifications"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.6.4" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in player_profiles tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="player_profiles"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.6.5" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(1) in player_profiles tables for batting_arm.
+	  </comment>
+	  <modifyDataType columnName="batting_arm"
+	                  newDataType="tinyint(2)"
+	                  tableName="player_profiles"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.6.6" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(1) in player_profiles tables for bowling_arm.
+	  </comment>
+	  <modifyDataType columnName="bowling_arm"
+	                  newDataType="tinyint(2)"
+	                  tableName="player_profiles"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.6.7" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(1) in player_profiles tables for bowling_style.
+	  </comment>
+	  <modifyDataType columnName="bowling_style"
+	                  newDataType="tinyint(2)"
+	                  tableName="player_profiles"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.6.8" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in player_statistics tables for is_cricket_ball_used.
+	  </comment>
+	  <modifyDataType columnName="is_cricket_ball_used"
+	                  newDataType="tinyint(1)"
+	                  tableName="player_statistics"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.6.9" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(1) in player_statistics tables for match_scale.
+	  </comment>
+	  <modifyDataType columnName="match_scale"
+	                  newDataType="tinyint(3)"
+	                  tableName="player_statistics"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.7.0" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(1) in player_statistics tables for match_type.
+	  </comment>
+	  <modifyDataType columnName="match_type"
+	                  newDataType="tinyint(3)"
+	                  tableName="player_statistics"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.7.1" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(1) in player_statistics tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="player_statistics"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.7.2" author="niranjan">
+	  <comment>Refs #75. changing datatype from tinyint(3) to tinyint(1) in popular_teams tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="popular_teams"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.7.3" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in profiles tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="profiles"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.7.4" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in profiles tables for gender.
+	  </comment>
+	  <modifyDataType columnName="gender"
+	                  newDataType="tinyint(1)"
+	                  tableName="profiles"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.7.5" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in reminders tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="reminders"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.7.6" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in reminders tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="reminders"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.7.7" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in score_updates tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="score_updates"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.7.8" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in series tables for is_public.
+	  </comment>
+	  <modifyDataType columnName="is_public"
+	                  newDataType="tinyint(1)"
+	                  tableName="series"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.7.9" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in series tables for is_cancelled.
+	  </comment>
+	  <modifyDataType columnName="is_cancelled"
+	                  newDataType="tinyint(1)"
+	                  tableName="series"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.8.0" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in series tables for scale.
+	  </comment>
+	  <modifyDataType columnName="scale"
+	                  newDataType="tinyint(3)"
+	                  tableName="series"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.8.1" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in series tables for series_type.
+	  </comment>
+	  <modifyDataType columnName="series_type"
+	                  newDataType="tinyint(3)"
+	                  tableName="series"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.8.2" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in series tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="series"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.8.3" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in series_awards tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="series_awards"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.8.4" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in series_privileges tables for is_admin.
+	  </comment>
+	  <modifyDataType columnName="is_admin"
+	                  newDataType="tinyint(1)"
+	                  tableName="series_privileges"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.8.5" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in series_privileges tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="series_privileges"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.8.6" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in series_privileges tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="series_privileges"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.8.7" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in series_teams tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="series_teams"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.8.8" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in series_teams tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="series_teams"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.8.9" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in shots tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="shots"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.9.0" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in singers tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="singers"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.9.1" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in sports_personalities tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="sports_personalities"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.9.2" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in teams tables for is_public.
+	  </comment>
+	  <modifyDataType columnName="is_public"
+	                  newDataType="tinyint(1)"
+	                  tableName="teams"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.9.3" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in teams tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="teams"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.9.4" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in team_players tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="team_players"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.9.5" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in team_players tables for role.
+	  </comment>
+	  <modifyDataType columnName="role"
+	                  newDataType="tinyint(3)"
+	                  tableName="team_players"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.9.6" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in team_players tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="team_players"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.9.7" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in team_player_history tables for active_status.
+	  </comment>
+	  <modifyDataType columnName="active_status"
+	                  newDataType="tinyint(3)"
+	                  tableName="team_player_history"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.9.8" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in team_player_history tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="team_player_history"/>
+	</changeSet>
+
+	<changeSet id="1.0.0.9.9" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in team_privileges tables for is_admin.
+	  </comment>
+	  <modifyDataType columnName="is_admin"
+	                  newDataType="tinyint(1)"
+	                  tableName="team_privileges"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.0.0" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in team_privileges tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="team_privileges"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.0.1" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in team_privileges tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="team_privileges"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.0.2" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(1) in team_staffs tables for role.
+	  </comment>
+	  <modifyDataType columnName="role"
+	                  newDataType="tinyint(1)"
+	                  tableName="team_staffs"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.0.3" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in team_staffs tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="team_staffs"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.0.4" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in team_staffs tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="team_staffs"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.0.5" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in types tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="types"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.0.6" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in users tables for is_verified.
+	  </comment>
+	  <modifyDataType columnName="is_verified"
+	                  newDataType="tinyint(1)"
+	                  tableName="users"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.0.7" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in users tables for role.
+	  </comment>
+	  <modifyDataType columnName="role"
+	                  newDataType="tinyint(3)"
+	                  tableName="users"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.0.8" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in users tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="users"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.0.9" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(1) in user_favorites tables for type.
+	  </comment>
+	  <modifyDataType columnName="type"
+	                  newDataType="tinyint(1)"
+	                  tableName="user_favorites"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.1.0" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in user_favorites tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="user_favorites"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.1.1" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in user_friends tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="user_friends"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.1.2" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in user_friends tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="user_friends"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.1.3" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(3) in user_groups tables for status.
+	  </comment>
+	  <modifyDataType columnName="status"
+	                  newDataType="tinyint(3)"
+	                  tableName="user_groups"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.1.4" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in user_groups tables for level.
+	  </comment>
+	  <modifyDataType columnName="level"
+	                  newDataType="tinyint(3)"
+	                  tableName="user_groups"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.1.5" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in user_groups tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="user_groups"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.1.6" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in user_requests tables for type.
+	  </comment>
+	  <modifyDataType columnName="type"
+	                  newDataType="tinyint(3)"
+	                  tableName="user_requests"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.1.7" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in user_requests tables for active_status.
+	  </comment>
+	  <modifyDataType columnName="active_status"
+	                  newDataType="tinyint(1)"
+	                  tableName="user_requests"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.1.8" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in user_requests tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="user_requests"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.1.9" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in verified_users tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="verified_users"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.2.0" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in videos tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="videos"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.2.1" author="niranjan">
+	  <comment>Refs #75. changing datatype from int(10) to tinyint(3) in wall_posts tables for type.
+	  </comment>
+	  <modifyDataType columnName="type"
+	                  newDataType="tinyint(3)"
+	                  tableName="wall_posts"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.2.2" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in wall_posts tables for is_shared.
+	  </comment>
+	  <modifyDataType columnName="is_shared"
+	                  newDataType="tinyint(1)"
+	                  tableName="wall_posts"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.2.3" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in wall_posts tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="wall_posts"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.2.4" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in wall_post_comments tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="wall_post_comments"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.2.5" author="niranjan">
+	  <comment>Refs #75. changing datatype from bit(1) to tinyint(1) in wall_post_likes tables for deleted.
+	  </comment>
+	  <modifyDataType columnName="deleted"
+	                  newDataType="tinyint(1)"
+	                  tableName="wall_post_likes"/>
+	</changeSet>
+
+	<changeSet id="1.0.1.2.6" author="niranjan">
+	  <comment>Refs #75. droping the table user_notification_times</comment>
+	  <dropTable tableName="user_notification_times"/>
+	</changeSet>
+
+</databaseChangeLog>

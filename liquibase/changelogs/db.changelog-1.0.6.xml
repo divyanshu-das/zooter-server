@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+  <changeSet id="1.0.6.0.1" author="divyanshu" >
+    <comment>Deleting column turf_nets from place_facilities table </comment>
+    <dropColumn columnName="turf_nets" tableName="place_facilities" />
+  </changeSet>
+
+  <changeSet id="1.0.6.0.2" author="divyanshu" >
+    <comment>Deleting column cement_nets from place_facilities table </comment>
+    <dropColumn columnName="cement_nets" tableName="place_facilities" />
+  </changeSet>
+
+  <changeSet id="1.0.6.0.3" author="divyanshu" >
+    <comment>Deleting column mat_nets from place_facilities table </comment>
+    <dropColumn columnName="mat_nets" tableName="place_facilities" />
+  </changeSet>
+
+  <changeSet id="1.0.6.0.4" author="divyanshu" >
+    <comment>Add column nets in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="nets" type="INT(11)" defaultValue="0" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER transport"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.0.5" author="divyanshu" >
+    <comment>Add column coach_count in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="coach_count" type="INT(11)" defaultValue="0" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER nets"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.0.6" author="divyanshu" >
+    <comment>Add column titles_won in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="titles_won" type="INT(11)" defaultValue="0" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER coach_count"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.0.7" author="divyanshu" >
+    <comment>Add column has_cricket_corner in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="has_cricket_corner" type="TINYINT(1)" defaultValue="0" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER titles_won"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.0.8" author="divyanshu" >
+    <comment>Add column sports_type in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="sports_type" type="INT(11)" defaultValue="0" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER has_cricket_corner"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.0.9" author="divyanshu" >
+    <comment>Add column not_to_miss in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="not_to_miss" type="VARCHAR(255)" defaultValue="NULL">
+        <constraints nullable="true"/>
+      </column>
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER cuisine"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.1.0" author="divyanshu" >
+    <comment>Add column has_home_delivery in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="has_home_delivery" type="TINYINT(1)" defaultValue="0" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER not_to_miss"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.1.1" author="divyanshu" >
+    <comment>Add column has_dine_in in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="has_dine_in" type="TINYINT(1)" defaultValue="0" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER has_home_delivery"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.1.2" author="divyanshu" >
+    <comment>Add column serves_non_veg in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="serves_non_veg" type="TINYINT(1)" defaultValue="0" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER has_dine_in"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.1.3" author="divyanshu" >
+    <comment>Add column serves_alcohol in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="serves_alcohol" type="TINYINT(1)" defaultValue="0" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER serves_non_veg"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.1.4" author="divyanshu" >
+    <comment>Add column has_ac in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="has_ac" type="TINYINT(1)" defaultValue="0" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER serves_alcohol"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.1.5" author="divyanshu" >
+    <comment>Add column has_smoking_area in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="has_smoking_area" type="TINYINT(1)" defaultValue="0" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER has_ac"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.1.6" author="divyanshu" >
+    <comment>Add column has_floodlights in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="has_floodlights" type="TINYINT(1)" defaultValue="0" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER has_smoking_area"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.1.7" author="divyanshu" >
+    <comment>Add column has_toilets in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="has_toilets" type="TINYINT(1)" defaultValue="0" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER has_floodlights"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.1.8" author="divyanshu" >
+    <comment>Add column special_offer in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="special_offer" type="TEXT" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER has_toilets"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.1.9" author="divyanshu">
+    <comment>Drop not null constraint on email from places table</comment>
+    <dropNotNullConstraint columnDataType="VARCHAR(255)" columnName="email" tableName="places" />
+  </changeSet>
+
+  <changeSet id="1.0.6.2.0" author="divyanshu" >
+    <comment>Add column contact_person in places table </comment>
+    <addColumn tableName="places">
+      <column name="contact_person" type="VARCHAR(255)" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER type"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.2.1" author="divyanshu" >
+    <comment>Add column available_for in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="available_for" type="INT(3)" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER cuisine"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.6.2.2" author="divyanshu" >
+    <comment>Add column pitch_type in place_facilities table </comment>
+    <addColumn tableName="place_facilities">
+      <column name="pitch_type" type="INT(3)" />
+    </addColumn>
+    <modifySql>
+      <append value=" AFTER available_for"/>
+    </modifySql>
+  </changeSet>
+
+</databaseChangeLog>
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+  <changeSet id="1.0.1.0.1" author="shubham">
+    <comment>Make default deleted field 0</comment>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0" tableName="albums"/>
+  </changeSet>
+
+  <changeSet id="1.0.1.0.2" author="shubham">
+    <comment>Make default deleted field 0</comment>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="album_contributors"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="api_keys"/>
+  </changeSet>
+
+  <changeSet id="1.0.1.0.3" author="shubham">
+    <comment>Make default deleted field 0</comment>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="applications"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="award_types"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="countries"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="dishes"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="fan_clubs"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="fan_club_favorites"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="fan_club_favorite_members"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="fan_club_members"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="fan_club_specials"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="grounds"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="groups"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="group_messages"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="group_message_comments"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="group_message_likes"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="hobbies"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="holiday_destinations"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="images"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="image_comments"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="locations"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="matches"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="match_awards"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="match_comments"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="match_followers"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="match_inning_scorecards"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="match_privileges"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="match_recommendations"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="match_results"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="match_staffs"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="match_teams"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="match_tosses"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="movies"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="music"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="notifications"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="player_profiles"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="player_statistics"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="popular_teams"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="profiles"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="reminders"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="score_updates"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="series"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="series_awards"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="series_privileges"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="series_teams"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="shots"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="singers"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="sports_personalities"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="teams"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="team_players"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="team_player_history"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="team_privileges"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="team_staffs"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="types"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="users"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="user_favorites"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="user_friends"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="user_groups"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="user_requests"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="verified_users"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="videos"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="wall_posts"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="wall_post_comments"/>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="wall_post_likes"/>
+  </changeSet>
+</databaseChangeLog>

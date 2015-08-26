@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+<changeSet id="1.0.3.0.0" author="niranjan">
+    <comment>Create Table match_batsman_scores.</comment>
+    <createTable tableName="match_batsman_scores">
+      <column name="id" type="INT" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="match_inning_score_id" type="INT(10)">
+          <constraints nullable="false"/>
+      </column>
+      <column name="player_id" type="INT(10)">
+          <constraints nullable="false"/>
+      </column>
+      <column name="runs" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="balls" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="fours" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="sixes" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="status" type="tinyint(3)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="out_type" type="tinyint(3)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="out_by_id" type="INT(10)" defaultValue="NULL">
+          <constraints nullable="true"/>
+      </column>
+      <column name="out_other_by_id" type="INT(10)" defaultValue="NULL">
+          <constraints nullable="true"/>
+      </column>
+      <column name="created" type="DATETIME" defaultValue="NULL">
+        <constraints nullable="true"/>
+      </column>
+      <column name="modified" type="DATETIME" defaultValue="NULL">
+        <constraints nullable="true"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="1.0.3.0.1" author="niranjan">
+    <comment>Create Table match_bowler_scores.</comment>
+    <createTable tableName="match_bowler_scores">
+      <column name="id" type="INT" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="match_inning_score_id" type="INT(10)">
+          <constraints nullable="false"/>
+      </column>
+      <column name="player_id" type="INT(10)">
+          <constraints nullable="false"/>
+      </column>
+      <column name="overs" type="FLOAT(4, 1)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="maidens" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="dot_balls" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="wickets" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+       <column name="runs_conceded" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="no_balls" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="wides" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="created" type="DATETIME" defaultValue="NULL">
+        <constraints nullable="true"/>
+      </column>
+      <column name="modified" type="DATETIME" defaultValue="NULL">
+        <constraints nullable="true"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="1.0.3.0.2" author="niranjan">
+    <comment>Create Table match_ball_scores.</comment>
+    <createTable tableName="match_ball_scores">
+      <column name="id" type="INT" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="match_inning_score_id" type="INT(10)">
+          <constraints nullable="false"/>
+      </column>
+      <column name="bowler_id" type="INT(10)">
+          <constraints nullable="false"/>
+      </column>
+      <column name="overs" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="over_balls" type="FLOAT(4, 1)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="striker_id" type="INT(10)">
+          <constraints nullable="false"/>
+      </column>
+      <column name="non_striker_id" type="INT(10)">
+          <constraints nullable="false"/>
+      </column>
+      <column name="runs" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="runs_taken_by_batsman" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="wides" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="no_balls" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="byes" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="leg_byes" type="INT(10)" defaultValue="0">
+          <constraints nullable="true"/>
+      </column>
+      <column name="is_four" type="tinyint(1)" defaultValue="NULL">
+          <constraints nullable="true"/>
+      </column>
+      <column name="is_six" type="tinyint(1)" defaultValue="NULL">
+          <constraints nullable="true"/>
+      </column>
+      <column name="is_out" type="tinyint(1)" defaultValue="NULL">
+          <constraints nullable="true"/>
+      </column>
+      <column name="is_retired_hurt" type="tinyint(1)" defaultValue="NULL">
+          <constraints nullable="true"/>
+      </column>
+      <column name="out_type" type="tinyint(3)" defaultValue="NULL">
+          <constraints nullable="true"/>
+      </column>
+      <column name="out_batsman_id" type="INT(10)" defaultValue="NULL">
+          <constraints nullable="true"/>
+      </column>
+      <column name="out_other_by_id" type="INT(10)" defaultValue="NULL">
+          <constraints nullable="true"/>
+      </column>
+      <column name="created" type="DATETIME" defaultValue="NULL">
+        <constraints nullable="true"/>
+      </column>
+      <column name="modified" type="DATETIME" defaultValue="NULL">
+        <constraints nullable="true"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="1.0.3.0.3" author="niranjan" >
+    <comment>renaming column images_count to match_batsman_scores in albums table</comment>
+    <renameColumn columnDataType="INT(10)"
+            newColumnName="user_id"
+            oldColumnName="player_id"
+            tableName="match_batsman_scores"/>
+  </changeSet>
+
+  <changeSet id="1.0.3.0.4" author="niranjan" >
+    <comment>renaming column images_count to match_bowler_scores in albums table</comment>
+    <renameColumn columnDataType="INT(10)"
+            newColumnName="user_id"
+            oldColumnName="player_id"
+            tableName="match_bowler_scores"/>
+  </changeSet>
+
+  <changeSet id="1.0.3.0.5" author="niranjan" >
+    <comment>adding column is_deleted in match_batsman_scores table</comment>
+    <addColumn tableName="match_batsman_scores">
+        <column name="is_deleted" type="tinyint(1)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER out_other_by_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.0.6" author="niranjan" >
+    <comment>adding column is_deleted in match_bowler_scores table</comment>
+    <addColumn tableName="match_bowler_scores ">
+        <column name="is_deleted" type="tinyint(1)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER wides"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.0.7" author="niranjan" >
+    <comment>renaming column is_deleted to deleted in match_batsman_scores table</comment>
+    <renameColumn columnDataType="tinyint(1)"
+            newColumnName="deleted"
+            oldColumnName="is_deleted"
+            tableName="match_batsman_scores"/>
+  </changeSet>
+
+  <changeSet id="1.0.3.0.8" author="niranjan" >
+    <comment>renaming column is_deleted to deleted in match_bowler_scores table</comment>
+    <renameColumn columnDataType="tinyint(1)"
+            newColumnName="deleted"
+            oldColumnName="is_deleted"
+            tableName="match_bowler_scores"/>
+  </changeSet>
+
+  <changeSet id="1.0.3.0.9" author="niranjan" > 
+    <comment>setting default value of deleted field to 0 in match_batsman_scores table</comment>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="match_batsman_scores"/>
+  </changeSet>
+
+  <changeSet id="1.0.3.1.0" author="niranjan" > 
+    <comment>setting default value of deleted field to 0 in match_bowler_scores table</comment>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="match_bowler_scores"/>
+  </changeSet>
+
+  <changeSet id="1.0.3.1.1" author="niranjan" >
+    <comment>adding column deleted_date in match_batsman_scores table</comment>
+    <addColumn tableName="match_batsman_scores">
+        <column name="deleted_date" type="datetime" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER deleted"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.1.2" author="niranjan" >
+    <comment>adding column deleted_date in match_bowler_scores table</comment>
+    <addColumn tableName="match_bowler_scores ">
+        <column name="deleted_date" type="datetime" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER deleted"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.1.3" author="niranjan" >
+    <comment>adding column location_id in albums table</comment>
+    <addColumn tableName="albums ">
+        <column name="location_id" type="INT(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER cover_image_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.1.4" author="niranjan" >
+    <comment>adding column in_progress in match_inning_scorecards table</comment>
+    <addColumn tableName="match_inning_scorecards ">
+        <column name="in_progress" type="tinyint(1)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER team_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.1.5" author="niranjan" >
+    <comment>adding column is_complete in match_inning_scorecards table</comment>
+    <addColumn tableName="match_inning_scorecards ">
+        <column name="is_complete" type="tinyint(1)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER in_progress"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.1.6" author="niranjan" >
+    <comment>adding column fours in match_inning_scorecards table</comment>
+    <addColumn tableName="match_inning_scorecards ">
+        <column name="fours" type="int(11)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER wickets"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.1.7" author="niranjan" >
+    <comment>adding column sixes in match_inning_scorecards table</comment>
+    <addColumn tableName="match_inning_scorecards ">
+        <column name="sixes" type="int(11)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER fours"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.1.8" author="niranjan" >
+    <comment>adding column required_overs in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="required_overs" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER overs_per_innings"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.1.9" author="niranjan" >
+    <comment>adding column target in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="target" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER required_overs"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.2.0" author="niranjan" >
+    <comment>adding column first_team_id in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="first_team_id" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER end_date_time"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.2.1" author="niranjan" >
+    <comment>adding column second_team_id in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="second_team_id" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER first_team_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.2.2" author="niranjan" >
+    <comment>adding column toss_winning_team_id in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="toss_winning_team_id" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER second_team_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.2.3" author="niranjan" >
+    <comment>adding column toss_decision in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="toss_decision" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER toss_winning_team_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.2.4" author="niranjan" >
+    <comment>adding column result_type in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="result_type" type="int(11)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER toss_decision"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.2.5" author="niranjan" >
+    <comment>adding column winning_team_id in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="winning_team_id" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER result_type"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.2.6" author="niranjan" >
+    <comment>adding column level in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="level" type="int(11)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER players_per_side"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.2.7" author="niranjan" >
+    <comment>renaming column match_inning_score_id to match_inning_scorecard_id in match_batsman_scores table</comment>
+    <renameColumn columnDataType="int(10)"
+            newColumnName="match_inning_scorecard_id"
+            oldColumnName="match_inning_score_id"
+            tableName="match_batsman_scores"/>
+  </changeSet>
+
+  <changeSet id="1.0.3.2.8" author="niranjan" >
+    <comment>renaming column match_inning_score_id to match_inning_scorecard_id in match_bowler_scores table</comment>
+    <renameColumn columnDataType="int(10)"
+            newColumnName="match_inning_scorecard_id"
+            oldColumnName="match_inning_score_id"
+            tableName="match_bowler_scores"/>
+  </changeSet>
+
+  <changeSet id="1.0.3.2.9" author="niranjan" >
+    <comment>renaming column match_inning_score_id to match_inning_scorecard_id in match_ball_scores table</comment>
+    <renameColumn columnDataType="int(10)"
+            newColumnName="match_inning_scorecard_id"
+            oldColumnName="match_inning_score_id"
+            tableName="match_ball_scores"/>
+  </changeSet>
+
+  <changeSet id="1.0.3.3.0" author="niranjan" >
+    <comment>adding column retired_hurt_batsman_id in match_ball_scores table</comment>
+    <addColumn tableName="match_ball_scores ">
+        <column name="retired_hurt_batsman_id" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER is_retired_hurt"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.3.1" author="niranjan" >
+    <comment>adding column ball_type in match_ball_scores table</comment>
+    <addColumn tableName="match_ball_scores ">
+        <column name="ball_type" type="int(11)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER over_balls"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.3.2" author="niranjan" >
+    <comment>adding column in_progress in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="in_progress" type="tinyint(1)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER end_date_time"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.3.3" author="niranjan" >
+    <comment>adding column is_complete in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="is_complete" type="tinyint(1)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER in_progress"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.3.4" author="niranjan" >
+    <comment>adding column deleted in match_ball_scores table</comment>
+    <addColumn tableName="match_ball_scores">
+        <column name="deleted" type="tinyint(1)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER out_other_by_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.3.5" author="niranjan" >
+    <comment>adding column is_deleted in match_bowler_scoresmatch_ball_scores table</comment>
+    <addColumn tableName="match_ball_scores ">
+        <column name="deleted_date" type="DATETIME" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER deleted"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.3.6" author="niranjan" >
+    <comment>adding column first_umpire_id in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="first_umpire_id" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER owner_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.3.7" author="niranjan" >
+    <comment>adding column second_umpire_id in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="second_umpire_id" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER first_umpire_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.3.8" author="niranjan" >
+    <comment>adding column third_umpire_id in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="third_umpire_id" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER second_umpire_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.3.9" author="niranjan" >
+    <comment>adding column referee_id in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="referee_id" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER third_umpire_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.4.0" author="niranjan" >
+    <comment>adding column reserve_umpire_id in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="reserve_umpire_id" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER third_umpire_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.4.1" author="niranjan" >
+    <comment>adding column overs in matches table</comment>
+    <addColumn tableName="matches ">
+        <column name="overs" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER is_cricket_ball_used"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.4.2" author="niranjan" >
+    <comment>adding column is_captain in match_players table</comment>
+    <addColumn tableName="match_players ">
+        <column name="is_captain" type="tinyint(1)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER role"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.4.3" author="niranjan" >
+    <comment>adding column is_substitute in match_players table</comment>
+    <addColumn tableName="match_players ">
+        <column name="is_substitute" type="tinyint(1)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER is_captain"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.4.4" author="niranjan" >
+    <comment>adding column match_id in images table</comment>
+    <addColumn tableName="images">
+        <column name="match_id" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER user_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.4.5" author="niranjan" >
+    <comment>adding column dot_balls in match_batsman_scores table</comment>
+    <addColumn tableName="match_batsman_scores">
+        <column name="dot_balls" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER balls"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.4.6" author="niranjan" > 
+    <comment>setting default value of dot_balls field to 0 in match_batsman_scores table</comment>
+    <addDefaultValue columnDataType="int(11)" columnName="dot_balls" defaultValueNumeric= "0"  tableName="match_batsman_scores"/>
+  </changeSet>
+
+  <changeSet id="1.0.3.4.7" author="niranjan" >
+    <createTable tableName="zooter_buckets">
+      <column autoIncrement="true" name="id" type="INT(10)">
+          <constraints primaryKey="true"/>
+      </column>
+      <column name="match_id" type="INT(10)">
+          <constraints nullable="false"/>
+      </column>
+      <column name="user_id" type="INT(10)">
+          <constraints nullable="false"/>
+      </column>
+      <column name="status" type="INT(10)"/>
+      <column name="deleted" type="BIT">
+          <constraints nullable="false"/>
+      </column>
+      <column name="deleted_date" type="datetime">
+          <constraints nullable="false"/>
+      </column>
+      <column name="created" type="datetime">
+          <constraints nullable="false"/>
+      </column>
+      <column name="modified" type="datetime">
+          <constraints nullable="false"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="1.0.3.4.8" author="niranjan" >
+    <comment>adding column reject_count in match_teams table</comment>
+    <addColumn tableName="match_teams">
+        <column name="reject_count" type="int(11)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER status"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.4.9" author="niranjan" >
+    <comment>adding column reject_count in team_players table</comment>
+    <addColumn tableName="team_players">
+        <column name="reject_count" type="int(11)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER status"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.5.0" author="niranjan" >
+    <comment>adding column reject_count in zooter_buckets table</comment>
+    <addColumn tableName="zooter_buckets">
+        <column name="reject_count" type="int(11)" defaultValue="0"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER status"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.5.1" author="niranjan">
+    <comment>changing datatype of role from tinyint(1) to int(10) in team_staffs table</comment>
+    <modifyDataType columnName="role"
+                    newDataType="int(10)"
+                    tableName="team_staffs"/>
+  </changeSet> 
+
+  <changeSet id="1.0.3.5.2" author="niranjan" >
+    <comment>adding column first_scorer_id in matches table</comment>
+    <addColumn tableName="matches">
+        <column name="first_scorer_id" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER referee_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.5.3" author="niranjan" >
+    <comment>adding column category in wall_posts table</comment>
+    <addColumn tableName="wall_posts">
+        <column name="category" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.5.4" author="niranjan" >
+    <comment>adding column match_id in wall_posts table</comment>
+    <addColumn tableName="wall_posts">
+        <column name="match_id" type="int(11)" defaultValue="NULL"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER user_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.3.5.5" author="niranjan" >
+    <comment>deleting column match_id in wall_posts table</comment>
+    <dropColumn tableName="wall_posts"
+                columnName="match_id" />
+  </changeSet>
+
+</databaseChangeLog>

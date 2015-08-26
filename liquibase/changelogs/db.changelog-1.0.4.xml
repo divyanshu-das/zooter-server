@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+  <changeSet id="1.0.3.0.1" author="divyanshu" >
+    <comment>Adding Table places </comment>
+    <createTable tableName="places">
+      <column autoIncrement="true" name="id" type="INT(10)">
+        <constraints primaryKey="true"/>
+      </column>
+      <column name="user_id" type="INT(10)"/>
+      <column name="location_id" type="INT(10)"/>
+      <column name="name" type="VARCHAR(255)" />
+      <column name="description" type="TEXT"  />
+      <column name="type" type="INT">
+        <constraints nullable="false" />
+      </column>
+      <column name="phone" type="INT">
+        <constraints nullable="false" />
+      </column>
+      <column name="alt_phone" type="INT" defaultValue="NULL">
+        <constraints nullable="true" />
+      </column>
+      <column name="email" type="VARCHAR(255)">
+        <constraints nullable="false" />
+      </column>
+      <column name="min_age" type="INT" defaultValue="NULL">
+        <constraints nullable="true" />
+      </column>
+      <column name="max_age" type="INT" defaultValue="NULL">
+        <constraints nullable="true" />
+      </column>
+      <column defaultValueNumeric="0" name="deleted" type="TINYINT(1)"/>
+      <column name="deleted_date" type="datetime"/>
+      <column name="created" type="datetime"/>
+      <column name="modified" type="datetime"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="1.0.3.0.2" author="divyanshu">
+    <comment>Changing data type of phone in places.</comment>
+    <modifyDataType columnName="phone"
+                    newDataType="VARCHAR(20)"
+                    tableName="places"/>
+  </changeSet>
+
+  <changeSet id="1.0.3.0.3" author="divyanshu">
+    <comment>Changing data type of alt_phone in places.</comment>
+    <modifyDataType columnName="alt_phone"
+                    newDataType="VARCHAR(20)"
+                    tableName="places"/>
+  </changeSet>
+
+</databaseChangeLog>

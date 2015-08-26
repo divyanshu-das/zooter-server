@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+  <changeSet id="1.0.7.0.1" author="divyanshu" >
+    <comment>Adding table user_followers </comment>
+    <createTable tableName="user_followers">
+        <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true"/>
+        </column>
+        <column name="user_id" type="INT(10)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="follower_id" type="INT(10)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="status" type="INT(10)">
+            <constraints nullable="false"/>
+        </column>
+        <column name="deleted" type="BIT">
+            <constraints nullable="false"/>
+        </column>
+        <column name="deleted_date" type="datetime">
+            <constraints nullable="false"/>
+        </column>
+        <column name="created" type="datetime"/>
+        <column name="modified" type="datetime"/>
+    </createTable>
+  </changeSet>
+    <changeSet id="1.0.7.0.2" author="divyanshu">
+      <comment>Changing datatype from bit(1) to tinyint(1) in user_followers tables.</comment>
+      <modifyDataType columnName="deleted"
+                      newDataType="tinyint(1)"
+                      tableName="user_followers"/>
+    </changeSet>
+
+    <changeSet id="1.0.7.0.3" author="divyanshu">
+        <comment>Drop not null constraint on type_id from users table</comment>
+        <dropNotNullConstraint columnDataType="INT(11)" columnName="type_id" tableName="users" />
+    </changeSet>
+    <changeSet id="1.0.7.0.4" author="divyanshu">
+        <comment>Drop not null constraint on location_id from profiles table</comment>
+        <dropNotNullConstraint columnDataType="INT(11)" columnName="location_id" tableName="profiles" />
+    </changeSet>
+    <changeSet id="1.0.7.0.5" author="divyanshu" >
+        <comment>Add column is_verified in places table </comment>
+        <addColumn tableName="places">
+          <column name="is_verified" type="TINYINT(1)" defaultValue="0" />
+        </addColumn>
+        <modifySql>
+          <append value=" AFTER max_age"/>
+        </modifySql>
+      </changeSet>
+
+      <changeSet id="1.0.7.0.6" author="divyanshu" >
+        <comment>Adding table transactional_emails </comment>
+        <createTable tableName="transactional_emails">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="from_email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="to_email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cc" type="VARCHAR(255)" defaultValue="NULL">
+                <constraints nullable="true"/>
+            </column>
+            <column name="bcc" type="VARCHAR(255)" defaultValue="NULL">
+                <constraints nullable="true"/>
+            </column>
+            <column name="subject" type="TEXT">
+            </column>
+            <column name="template" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="merge_vars" type="TEXT">
+            </column>
+            <column name="attachments" type="TEXT">
+            </column>
+            <column name="is_sent" type="TINYINT(1)" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_delivered" type="TINYINT(1)" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delivery_datetime" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+      </changeSet>
+      <changeSet id="1.0.7.0.7" author="divyanshu" >
+        <comment>Adding table crm_emails </comment>
+        <createTable tableName="crm_emails">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="from_email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="to_email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="subject" type="TEXT">
+            </column>
+            <column name="template" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="merge_vars" type="TEXT">
+            </column>
+            <column name="is_sent" type="TINYINT(1)" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_delivered" type="TINYINT(1)" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delivery_datetime" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+      </changeSet>
+      <changeSet id="1.0.7.0.8" author="divyanshu">
+      <comment>Changing datatype from bit(1) to tinyint(1) in transactional_emails tables.</comment>
+      <modifyDataType columnName="deleted"
+                      newDataType="tinyint(1)"
+                      tableName="transactional_emails"/>
+    </changeSet>
+    <changeSet id="1.0.7.0.9" author="divyanshu">
+      <comment>Changing datatype from bit(1) to tinyint(1) in crm_emails tables.</comment>
+      <modifyDataType columnName="deleted"
+                      newDataType="tinyint(1)"
+                      tableName="crm_emails"/>
+    </changeSet>
+    <changeSet id="1.0.7.1.0" author="divyanshu">
+      <comment>Add default value for deleted field in transactional_emails table.</comment>
+      <addDefaultValue columnDataType="TINYINT(1)" columnName="deleted" defaultValueNumeric="0" tableName="transactional_emails" />
+    </changeSet>
+    <changeSet id="1.0.7.1.1" author="divyanshu">
+      <comment>Add default value for deleted field in crm_emails table.</comment>
+      <addDefaultValue columnDataType="TINYINT(1)" columnName="deleted" defaultValueNumeric="0" tableName="crm_emails" />
+    </changeSet>
+    <changeSet id="1.0.7.1.2" author="divyanshu">
+      <comment>Changing datatype of gender from TINYINT(1) to INT(11) in profiles tables.</comment>
+      <modifyDataType columnName="gender"
+                      newDataType="INT(11)"
+                      tableName="profiles"/>
+    </changeSet>
+
+    <changeSet id="1.0.7.1.3" author="divyanshu" >
+        <comment>Add column image_id in place_reviews table </comment>
+        <addColumn tableName="place_reviews">
+          <column name="image_id" type="INT(11)" />
+        </addColumn>
+        <modifySql>
+          <append value=" AFTER user_id"/>
+        </modifySql>
+    </changeSet>
+
+    <changeSet id="1.0.7.1.4" author="divyanshu" >
+        <comment>Add column place_review_count in places table </comment>
+        <addColumn tableName="places">
+          <column name="place_review_count" type="INT(11)" />
+        </addColumn>
+        <modifySql>
+          <append value=" AFTER location_id"/>
+        </modifySql>
+    </changeSet>
+
+    <changeSet id="1.0.7.1.5" author="divyanshu" >
+        <comment>Add column review_count in users table </comment>
+        <addColumn tableName="users">
+          <column name="review_count" type="INT(11)" />
+        </addColumn>
+        <modifySql>
+          <append value=" AFTER access_level"/>
+        </modifySql>
+    </changeSet>
+
+    <changeSet id="1.0.7.1.6" author="divyanshu" >
+        <comment>Add column place_rating_count in places table </comment>
+        <addColumn tableName="places">
+          <column name="place_rating_count" type="INT(11)" defaultValue="0" />
+        </addColumn>
+        <modifySql>
+          <append value=" AFTER place_review_count"/>
+        </modifySql>
+    </changeSet>
+
+</databaseChangeLog>

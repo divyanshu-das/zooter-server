@@ -1,0 +1,127 @@
+200 - success
+901 - User already Registered
+902 - Username already exists
+903 - User not saved. Validation Errors
+904 - User does not exist
+905 - Username and email do not match
+906 - Password does not match
+907 - Email not found
+908 - Password reset key not generated
+909 - User Id and Password reset key not matched
+910 - No User Id in Input to Fetch Dashboard
+911 - No User Id in Input to Fetch User Profile
+912 - User does not exist
+913 - User Not A Friend
+914 - Users could not be added for recommendation
+
+
+701 - Location not saved
+
+601 - WallPostCommet not saved
+602 - WallPostLike not saved
+
+801 - Friend does not exist
+
+501 - Series User Privilege not set
+502 - Series Could not be created
+
+401 - Team Could not be created
+402 - Team Player Could not be added
+403 - Team Staff Could not be added
+404 - Team Privilege Could not be added
+405 - Team Data Could Not Be Retrieved
+406 - Team Admins Updation Failed
+407 - Updating Team Players Data Unsuccessfull
+408 - Updating Team Staffs Data Unsuccessfull
+409 - No Data To Update or Add Team Admins
+410 - No Data To Update or Add Team Players and Roles
+410 - No Data To Update or Add Team Staffs and Roles
+
+301 - Match Could Not Be Created
+302 - Match Data Could Not Be Retrieved
+303 - Match Could Not Be Updated
+304 - Updating Match Team Unsuccessfull
+305 - No Data To Update or Add Match Teams and Status
+306 - Updating Match Admins Unsuccessfull
+307 - No Data To Update or Add Match Admins
+308 - Updating Match Awards Unsuccessfull
+309 - No Data To Update or Add Match Awards
+310 - Updating Match Staffs Data Unsuccessfull
+311 - No Data To Update or Add Match Staffs and Roles
+312 - Match Players Could not be added or updated
+313 - No Data To Update or Add Match Players and Roles
+314 - Match Inning Score Could not be added or updated
+315 - No Data To Update or Add Match Inning Score
+316 - Match Player Score Could not be added or updated
+317 - No Data To Update or Add Match Player Score
+318 - Player Career Statistics Could not be added or updated
+319 - No Data To Update or Add Player Career Statistics
+320 - Invalid Input For Follow Match
+321 - Match Follower Could not be Set
+322 - Invalid input match id
+323 - No Match Data found for Match Id
+324 - User is Already Following the Match
+325 - Match is not Public
+326 - searchMatches : Invalid input arguments
+327 - searchMatches : No Match Data found for given Inputs
+328 - searchMatches : User Friend List Could not be retrieved
+329 - search : Invalid input arguments
+330 - search : No Date data In Input
+331 - search : No DateType data In Input
+332 - search : User Does not exists
+333 - searchBox : Invalid input arguments
+334 - serachTeams : Invalid input arguments
+335 - serachTeams : User Does not exists
+336 - searchTeams : No Team Data Found
+337 - searchUser : No user Found in Search
+338 - searchGroup : No Group Found in Search
+339 - searchUserFriendsByText : No Search Data found In Friends
+340 - searchBox : No Friends exist For User
+341 - getCountOfFriendsFollowingTheMatch : No Data Found
+
+100 - Invalid Input Arguments
+101 - Invalid Input arguments for accept Request
+102 - No User Request ID found
+103 - Invalid Arguments for Friend Accept Request
+104 - User Not Eligible to Accept Friend Request
+105 - Friend Request Accept Could not be updated
+106 - Invalid arguments for User request update
+107 - User Request Accept Could not be updated
+108 - Invalid Arguments for Group Accept Request
+109 - User Not Eligible to Accept Group Request
+110 - Group Request Accept Could not be updated
+111 - Invalid Arguments for Team player Accept Request
+112 - User Not Eligible to Accept Team player Request
+113 - Team player Request Accept Could not be updated
+114 - Invalid Arguments for Team Admin Accept Request
+115 - User Not Eligible to Accept Team Admin Request
+116 - Team Admin Request Accept Could not be updated
+117 - Invalid Arguments for Team Staff Accept Request
+118 - User Not Eligible to Accept Team Staff Request
+119 - Team Staff Request Accept Could not be updated
+120 - Invalid Arguments for Match Team Player Accept Request
+121 - User Not Eligible to Accept Match Team Player Request
+122 - Match Team Player Request Accept Could not be updated
+123 - Invalid Arguments for Match Staff Accept Request
+124 - User Not Eligible to Accept Match Staff Request
+125 - Match Staff Request Accept Could not be updated
+126 - Invalid Arguments for Match Admin Accept Request
+127 - User Not Eligible to Accept Match Admin Request
+128 - Match Admin Request Accept Could not be updated
+129 - Invalid Arguments for Match Admin Accept Request
+130 - User Not Eligible to Accept Match Admin Request
+131 - Match Admin Request Accept Could not be updated
+132 - Invalid Arguments for Series Team Accept Request
+133 - User Not Eligible to Accept Series Team Request
+134 - Series Team Request Accept Could not be updated
+135 - Invalid Arguments for Match Team Accept Request
+136 - User Not Eligible to Accept Match Team Request
+137 - Match Team Request Accept Could not be updated
+
+
+600 - Fan Club not created
+601 - Fan Club favorites not created
+602 - Fan Club does not exist
+603 - You are not authorised to modify this Fan Club
+604 - Fan Club could not be updated
+

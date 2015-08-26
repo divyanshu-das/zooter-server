@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="1.0.2.0.1" author="niranjan" >
+    <comment>adding column room_id in wall_posts table</comment>
+  	<addColumn tableName="wall_posts">
+        <column name="room_id" type="INT(10)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER is_shared"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.0.2" author="niranjan" >
+    <createTable tableName="rooms">
+      <column autoIncrement="true" name="id" type="INT(10)">
+          <constraints primaryKey="true"/>
+      </column>
+      <column name="name" type="VARCHAR(255)"/>
+      <column defaultValueNumeric="0" name="deleted" type="tinyint(1)"/>
+      <column name="deleted_date" type="datetime"/>
+      <column name="created" type="datetime"/>
+      <column name="modified" type="datetime"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="1.0.2.0.3" author="niranjan" >
+    <createTable tableName="room_members">
+      <column autoIncrement="true" name="id" type="INT(10)">
+          <constraints primaryKey="true"/>
+      </column>
+      <column name="room_id" type="INT(10)"/>
+      <column name="user_id" type="INT(10)"/>
+      <column defaultValueNumeric="0" name="deleted" type="tinyint(1)"/>
+      <column name="deleted_date" type="datetime"/>
+      <column name="created" type="datetime"/>
+      <column name="modified" type="datetime"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="1.0.2.0.4" author="niranjan" >
+    <comment>adding column room_member_count in rooms table</comment>
+  	<addColumn tableName="rooms">
+        <column name="room_member_count" type="INT(10)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER name"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.0.5" author="niranjan" >
+    <createTable tableName="cities">
+      <column autoIncrement="true" name="id" type="INT(10)">
+          <constraints primaryKey="true"/>
+      </column>
+      <column name="name" type="VARCHAR(255)"/>
+      <column name="state_id" type="INT(10)"/>
+      <column name="location_count" type="INT(10)"/>
+      <column defaultValueNumeric="0" name="deleted" type="tinyint(1)"/>
+      <column name="deleted_date" type="datetime"/>
+      <column name="created" type="datetime"/>
+      <column name="modified" type="datetime"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="1.0.2.0.6" author="niranjan" >
+    <createTable tableName="states">
+        <column autoIncrement="true" name="id" type="INT(10)">
+            <constraints primaryKey="true"/>
+        </column>
+        <column name="name" type="VARCHAR(255)"/>
+        <column name="state_id" type="INT(10)"/>
+        <column name="city_count" type="INT(10)"/>
+        <column defaultValueNumeric="0" name="deleted" type="tinyint(1)"/>
+        <column name="deleted_date" type="datetime"/>
+        <column name="created" type="datetime"/>
+        <column name="modified" type="datetime"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="1.0.2.0.7" author="niranjan" >
+  	<renameColumn columnDataType="INT(10)"
+            newColumnName="country_id"
+            oldColumnName="state_id"
+            tableName="states"/>
+  </changeSet>
+
+  <changeSet id="1.0.2.0.8" author="niranjan" >
+    <comment>adding column name in videos table</comment>
+  	<addColumn tableName="videos">
+        <column name="name" type="VARCHAR(255)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.0.9" author="niranjan" >
+  	<comment>renaming column snap_date_time to video_date_time in videos table</comment>
+  	<renameColumn columnDataType="datetime"
+            newColumnName="video_date_time"
+            oldColumnName="snap_date_time"
+            tableName="videos"/>
+  </changeSet>
+
+  <changeSet id="1.0.2.1.0" author="niranjan" >
+    <comment>adding column size in videos table</comment>
+  	<addColumn tableName="videos">
+        <column name="size" type="INT(10)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER url"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.1.1" author="niranjan" >
+    <comment>adding column mime_type in videos table</comment>
+  	<addColumn tableName="videos">
+        <column name="mime_type" type="INT(10)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER size"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.1.2" author="niranjan" >
+    <comment>adding column video_id in wall_posts table</comment>
+  	<addColumn tableName="wall_posts">
+        <column name="video_id" type="INT(10)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER image_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.1.3" author="niranjan" >
+    <comment>adding column city_id in locations table</comment>
+  	<addColumn tableName="locations">
+        <column name="city_id" type="INT(10)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER longitude"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.1.4" author="niranjan">
+    <comment>Refs #83. changing datatype from int(10) to VARCHAR(255) in videos table</comment>
+    <modifyDataType columnName="mime_type"
+                    newDataType="VARCHAR(255)"
+                    tableName="videos"/>
+  </changeSet>
+
+  <changeSet id="1.0.2.1.5" author="niranjan" >
+    <comment>adding column shared_id in wall_posts table</comment>
+    <addColumn tableName="wall_posts">
+        <column name="shared_id" type="INT(10)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER is_shared"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.1.6" author="niranjan" >
+    <comment>adding column shared_text in wall_posts table</comment>
+    <addColumn tableName="wall_posts">
+        <column name="shared_text" type="TEXT"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER shared_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.1.7" author="niranjan" >
+    <comment>adding column cover_image_id in albums table</comment>
+    <addColumn tableName="albums">
+        <column name="cover_image_id" type="INT(10)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER user_id"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.1.8" author="niranjan" >
+    <comment>renaming column images_count to image_count in albums table</comment>
+    <renameColumn columnDataType="INT(10)"
+            newColumnName="image_count"
+            oldColumnName="images_count"
+            tableName="albums"/>
+  </changeSet>
+
+  <changeSet id="1.0.2.1.9" author="niranjan" >
+    <comment>adding column image_id in videos table</comment>
+    <addColumn tableName="videos">
+        <column name="image_id" type="INT(10)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER url"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.2.0" author="niranjan">
+    <comment>changing datatype from int(10) to tinyint(1) in match_player_scorecards table</comment>
+    <modifyDataType columnName="deleted"
+                    newDataType="tinyint(1)"
+                    tableName="match_player_scorecards"/>
+  </changeSet>
+
+  <changeSet id="1.0.2.2.1" author="niranjan" > 
+    <comment>setting default value of deleted field to 0 in match_player_scorecards table</comment>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="deleted" defaultValueNumeric= "0"  tableName="match_player_scorecards"/>
+  </changeSet> 
+
+  <changeSet id="1.0.2.2.2" author="niranjan">
+    <comment>changing datatype is_selected_best from int(10) to tinyint(1) in match_player_scorecards table</comment>
+    <modifyDataType columnName="is_selected_best"
+                    newDataType="tinyint(1)"
+                    tableName="match_player_scorecards"/>
+  </changeSet> 
+
+  <changeSet id="1.0.2.2.3" author="niranjan" > 
+    <comment>setting default value of is_selected_best field to 0 in match_player_scorecards table</comment>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="is_selected_best" defaultValueNumeric= "0"  tableName="match_player_scorecards"/>
+  </changeSet> 
+
+  <changeSet id="1.0.2.2.4" author="niranjan" >
+    <comment>adding column is_selected_best in match_players table</comment>
+    <addColumn tableName="match_players">
+        <column name="is_selected_best" type="tinyint(1)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER status"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.2.5" author="niranjan" > 
+    <comment>setting default value of is_selected_best field to 0 in match_players table</comment>
+    <addDefaultValue columnDataType="tinyint(1)" columnName="is_selected_best" defaultValueNumeric= "0"  tableName="match_players"/>
+  </changeSet> 
+
+  <changeSet id="1.0.2.2.6" author="niranjan" >
+    <comment>adding column is_selected_best in match_player_scorecards table</comment>
+    <addColumn tableName="match_player_scorecards">
+        <column name="is_batting" type="tinyint(1)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER inning"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.2.7" author="niranjan" >
+    <comment>adding column match_contribution in match_players table</comment>
+    <addColumn tableName="match_players">
+        <column name="match_contribution" type="INT(10)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER is_selected_best"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.2.8" author="niranjan" > 
+    <comment>setting default value of is_selected_best field to 0 in match_players table</comment>
+    <addDefaultValue columnDataType="INT(10)" columnName="match_contribution" defaultValueNumeric= "0"  tableName="match_players"/>
+  </changeSet> 
+
+  <changeSet id="1.0.2.2.9" author="niranjan" >
+    <comment>adding column nick in teams table</comment>
+    <addColumn tableName="teams">
+        <column name="nick" type="VARCHAR(255)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER name"/>
+    </modifySql>
+  </changeSet>
+
+  <changeSet id="1.0.2.3.0" author="niranjan" >
+    <comment>adding column twitter_handle in profiles table</comment>
+    <addColumn tableName="profiles">
+        <column name="twitter_handle" type="VARCHAR(255)"/>
+    </addColumn>
+    <modifySql>
+        <append value=" AFTER facebook_access_token"/>
+    </modifySql>
+  </changeSet>
+
+ <changeSet id="1.0.2.3.1" author="niranjan" >
+  <comment>adding column linkedin_handle in profiles table</comment>
+  <addColumn tableName="profiles">
+      <column name="linkedin_handle" type="VARCHAR(255)"/>
+  </addColumn>
+  <modifySql>
+      <append value=" AFTER twitter_oauth_secret"/>
+  </modifySql>
+  </changeSet>
+
+</databaseChangeLog>

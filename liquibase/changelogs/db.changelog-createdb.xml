@@ -1,0 +1,1596 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="zooter-admin (generated)" id="1421381120187-1">
+        <createTable tableName="album_contributors">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="album_id" type="INT(10)"/>
+            <column name="user_id" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-2">
+        <createTable tableName="albums">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="user_id" type="INT(10)"/>
+            <column name="images_count" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-3">
+        <createTable tableName="api_keys">
+            <column autoIncrement="true" name="id" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)"/>
+            <column name="api_key" type="VARCHAR(50)"/>
+            <column defaultValueNumeric="1" name="is_active" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-4">
+        <createTable tableName="applications">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(100)"/>
+            <column name="guid" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="domain_name" type="VARCHAR(100)"/>
+            <column defaultValueNumeric="1" name="is_active" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-5">
+        <createTable tableName="award_types">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="award_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-6">
+        <createTable tableName="countries">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="country_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-7">
+        <createTable tableName="dishes">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-8">
+        <createTable tableName="fan_club_favorite_members">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="fan_club_id" type="INT(10)"/>
+            <column name="user_id" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-9">
+        <createTable tableName="fan_club_favorites">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="fan_club_id" type="INT(10)"/>
+            <column name="favorite_id" type="INT(10)"/>
+            <column name="type" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-10">
+        <createTable tableName="fan_club_members">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="fan_club_id" type="INT(10)"/>
+            <column name="user_id" type="INT(10)"/>
+            <column name="type" type="INT(10)"/>
+            <column name="level" type="INT(10)"/>
+            <column name="status" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-11">
+        <createTable tableName="fan_club_specials">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="fan_club_id" type="INT(10)"/>
+            <column name="user_id" type="INT(10)"/>
+            <column name="type" type="INT(10)"/>
+            <column name="status" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-12">
+        <createTable tableName="fan_clubs">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="user_id" type="INT(10)"/>
+            <column name="image_id" type="INT(10)"/>
+            <column name="cover_image_id" type="INT(10)"/>
+            <column name="tagline" type="TEXT"/>
+            <column name="fan_club_members_count" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-13">
+        <createTable tableName="grounds">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="image" type="TEXT"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-14">
+        <createTable tableName="group_message_comments">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="group_message_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="message" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-15">
+        <createTable tableName="group_message_likes">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="group_message_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-16">
+        <createTable tableName="group_messages">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="group_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="message" type="TEXT"/>
+            <column name="image" type="VARCHAR(255)"/>
+            <column name="video" type="VARCHAR(255)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-17">
+        <createTable tableName="groups">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="image_id" type="INT(10)"/>
+            <column name="cover_image_id" type="INT(10)"/>
+            <column name="tagline" type="TEXT"/>
+            <column name="group_users_count" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-18">
+        <createTable tableName="hobbies">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-19">
+        <createTable tableName="holiday_destinations">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-20">
+        <createTable tableName="image_comments">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="comment" type="VARCHAR(255)"/>
+            <column name="url" type="TEXT"/>
+            <column name="image_id" type="INT(10)"/>
+            <column name="user_id" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-21">
+        <createTable tableName="images">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="caption" type="VARCHAR(255)"/>
+            <column name="url" type="TEXT"/>
+            <column name="album_id" type="INT(10)"/>
+            <column name="location_id" type="INT(10)"/>
+            <column name="snap_date_time" type="datetime"/>
+            <column name="user_id" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-22">
+        <createTable tableName="locations">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="unique_identifier" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="latitude" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="longitude" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-23">
+        <createTable tableName="match_awards">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="match_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT(10)"/>
+            <column name="award_type_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="INT(10)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-24">
+        <createTable tableName="match_comments">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="match_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="comment" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="comment_by" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-25">
+        <createTable tableName="match_followers">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="match_id" type="INT(10)"/>
+            <column name="user_id" type="INT(10)"/>
+            <column name="is_playing" type="BIT"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-26">
+        <createTable tableName="match_inning_scorecards">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="match_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="inning" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="team_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_runs" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="overs" type="FLOAT(4, 1)"/>
+            <column name="wickets" type="INT(10)"/>
+            <column name="wide_balls" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="leg_byes" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="byes" type="INT(10)"/>
+            <column name="no_balls" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-27">
+        <createTable tableName="match_player_scorecards">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="match_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="inning" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="runs_scored" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="balls_faced" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fours_hit" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sixes_hit" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="wickets_taken" type="INT(10)"/>
+            <column name="overs_bowled" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="maidens_bowled" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="runs_conceded" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="wides_bowled" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="no_balls_bowled" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="batting_contribution" type="INT(10)"/>
+            <column name="bowling_contribution" type="INT(10)"/>
+            <column name="is_selected_best" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-28">
+        <createTable tableName="match_players">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="match_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="team_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role" type="INT(10)"/>
+            <column name="status" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-29">
+        <createTable tableName="match_privileges">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="match_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_admin" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-30">
+        <createTable tableName="match_recommendations">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="match_id" type="INT(10)"/>
+            <column name="user_id" type="INT(10)"/>
+            <column name="recommended_to" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-31">
+        <createTable tableName="match_results">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="match_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="winning_team_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="result_type" type="INT(10)"/>
+            <column name="comment" type="TEXT"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-32">
+        <createTable tableName="match_staffs">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="match_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-33">
+        <createTable tableName="match_teams">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="match_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="team_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT(10)"/>
+            <column name="is_host" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-34">
+        <createTable tableName="match_tosses">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="match_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="winning_team_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="toss_decision" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-35">
+        <createTable tableName="matches">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="checksum" type="VARCHAR(255)"/>
+            <column name="series_id" type="INT(10)"/>
+            <column name="start_date_time" type="datetime"/>
+            <column name="end_date_time" type="datetime"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="is_public" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="location_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="players_per_side" type="TEXT"/>
+            <column name="match_type" type="INT(10)"/>
+            <column name="match_scale" type="INT(10)"/>
+            <column name="series_match_level" type="INT(10)"/>
+            <column name="is_test" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_cricket_ball_used" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="overs_per_innings" type="INT(10)"/>
+            <column name="owner_id" type="INT(10)"/>
+            <column name="is_match_data_complete" type="INT(10)"/>
+            <column name="match_followers_count" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-36">
+        <createTable tableName="movies">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="genre" type="VARCHAR(255)"/>
+            <column name="rating" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-37">
+        <createTable tableName="music">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-38">
+        <createTable tableName="notifications">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="type" type="INT(10)"/>
+            <column name="user_id" type="INT(10)"/>
+            <column name="sender_id" type="INT(10)"/>
+            <column name="fan_club_id" type="INT(10)"/>
+            <column name="group_id" type="INT(10)"/>
+            <column name="team_id" type="INT(10)"/>
+            <column name="match_id" type="INT(10)"/>
+            <column name="is_read" type="BIT"/>
+            <column name="direct_link" type="TEXT"/>
+            <column name="data" type="TEXT"/>
+            <column name="tagged_by" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-39">
+        <createTable tableName="player_profiles">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="batting_arm" type="INT(10)"/>
+            <column name="bowling_arm" type="INT(10)"/>
+            <column name="bowling_style" type="INT(10)"/>
+            <column name="playing_roles" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-40">
+        <createTable tableName="player_statistics">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_cricket_ball_used" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="match_scale" type="INT(10)"/>
+            <column name="match_type" type="INT(10)"/>
+            <column name="total_matches" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_runs" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="highest_batting_score" type="INT(10)"/>
+            <column name="total_balls_faced" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_wickets_taken" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="best_bowling" type="TEXT"/>
+            <column name="total_overs_bowled" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_wides_bowled" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_fours_hit" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_sixes_hit" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_no_balls_bowled" type="INT(10)"/>
+            <column name="total_maidens_bowled" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_runs_conceded" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-41">
+        <createTable tableName="popular_teams">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="image" type="TEXT"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-42">
+        <createTable tableName="profiles">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="facebook_id" type="VARCHAR(255)"/>
+            <column name="facebook_access_token" type="VARCHAR(255)"/>
+            <column name="twitter_oauth_key" type="VARCHAR(255)"/>
+            <column name="twitter_oauth_secret" type="VARCHAR(255)"/>
+            <column name="first_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="middle_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gender" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_of_birth" type="date"/>
+            <column name="image_id" type="INT(10)"/>
+            <column name="cover_image_id" type="INT(10)"/>
+            <column name="location_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="TEXT"/>
+            <column name="last_logged_in" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_logged_ip" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-43">
+        <createTable tableName="reminders">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)"/>
+            <column name="main_text" type="VARCHAR(255)"/>
+            <column name="subtext" type="VARCHAR(255)"/>
+            <column name="reminder_time" type="datetime"/>
+            <column name="priority" type="INT(10)"/>
+            <column name="status" type="BIT"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created_by" type="INT(10)"/>
+            <column name="modified_by" type="INT(10)"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-44">
+        <createTable tableName="score_updates">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="match_inning_scorecard_id" type="INT(10)"/>
+            <column name="total_runs" type="INT(10)"/>
+            <column name="overs" type="INT(10)"/>
+            <column name="wickets" type="INT(10)"/>
+            <column name="wide_balls" type="INT(10)"/>
+            <column name="leg_byes" type="INT(10)"/>
+            <column name="byes" type="INT(10)"/>
+            <column name="no_balls" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-45">
+        <createTable tableName="series">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start_date_time" type="datetime"/>
+            <column name="end_date_time" type="datetime"/>
+            <column name="is_public" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_cancelled" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="location_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="checksum" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="owner_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="scale" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="series_type" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-46">
+        <createTable tableName="series_awards">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="series_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="award_type_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-47">
+        <createTable tableName="series_privileges">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="series_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_admin" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-48">
+        <createTable tableName="series_teams">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="series_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="team_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-49">
+        <createTable tableName="shots">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-50">
+        <createTable tableName="singers">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-51">
+        <createTable tableName="sports_personalities">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="type" type="INT(10)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="image" type="TEXT"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-52">
+        <createTable tableName="team_player_history">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="team_id" type="INT(10)"/>
+            <column name="user_id" type="INT(10)"/>
+            <column name="active_status" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-53">
+        <createTable tableName="team_players">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="team_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT(10)"/>
+            <column name="role" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-54">
+        <createTable tableName="team_privileges">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="team_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_admin" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-55">
+        <createTable tableName="team_staffs">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="team_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT(10)"/>
+            <column name="role" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-56">
+        <createTable tableName="teams">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_public" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="owner_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="image_id" type="INT(10)"/>
+            <column name="cover_image_id" type="INT(10)"/>
+            <column name="registration_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="location_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="team_tagline" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="checksum" type="TEXT"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-57">
+        <createTable tableName="types">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="type" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-58">
+        <createTable tableName="user_favorites">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)"/>
+            <column name="type" type="INT(10)"/>
+            <column name="favorite_id" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-59">
+        <createTable tableName="user_friends">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="friend_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-60">
+        <createTable tableName="user_groups">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="group_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="BIT"/>
+            <column defaultValueNumeric="1" name="level" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-61">
+        <createTable tableName="user_notification_times">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)"/>
+            <column name="last_notification_seen_time" type="datetime"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-62">
+        <createTable tableName="user_requests">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="type" type="INT(10)"/>
+            <column name="request_id" type="INT(10)"/>
+            <column name="request_name" type="VARCHAR(255)"/>
+            <column name="user_id" type="INT(10)"/>
+            <column name="active_status" type="BIT"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created_by" type="INT(10)"/>
+            <column name="modified_by" type="INT(10)"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-63">
+        <createTable tableName="users">
+            <column autoIncrement="true" name="id" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password_reset" type="VARCHAR(50)"/>
+            <column name="phone" type="VARCHAR(20)"/>
+            <column defaultValueNumeric="0" name="is_verified" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dir" type="VARCHAR(255)"/>
+            <column name="type_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role" type="INT(10)"/>
+            <column defaultValueNumeric="1" name="access_level" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_seen_notification_time" type="datetime"/>
+            <column name="last_seen_request_time" type="datetime"/>
+            <column name="last_seen_reminder_time" type="datetime"/>
+            <column name="last_seen_message_time" type="datetime"/>
+            <column name="user_groups_count" type="INT(10)"/>
+            <column name="user_fan_clubs_count" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-64">
+        <createTable tableName="verified_users">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="twitter_handle" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="phone" type="VARCHAR(255)"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-65">
+        <createTable tableName="videos">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="caption" type="VARCHAR(255)"/>
+            <column name="url" type="TEXT"/>
+            <column name="location_id" type="INT(10)"/>
+            <column name="snap_date_time" type="datetime"/>
+            <column name="user_id" type="INT(10)"/>
+            <column defaultValueNumeric="0" name="deleted" type="TINYINT(3)"/>
+            <column name="deleted_date" type="datetime"/>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-66">
+        <createTable tableName="wall_post_comments">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="comment" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="wall_post_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-67">
+        <createTable tableName="wall_post_likes">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="wall_post_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="modified" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="zooter-admin (generated)" id="1421381120187-68">
+        <createTable tableName="wall_posts">
+            <column autoIncrement="true" name="id" type="INT(10)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="type" type="INT(10)"/>
+            <column name="user_id" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="posted_on_id" type="INT(10)"/>
+            <column name="is_shared" type="TINYINT(3)"/>
+            <column name="post" type="TEXT"/>
+            <column name="image_id" type="INT(10)"/>
+            <column name="location_id" type="INT(10)"/>
+            <column name="hyperlink" type="VARCHAR(255)"/>
+            <column name="wall_post_like_count" type="INT(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="wall_post_comment_count" type="INT(10)"/>
+            <column name="deleted" type="BIT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deleted_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created" type="datetime"/>
+            <column name="modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
